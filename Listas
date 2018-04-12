@@ -1,0 +1,64 @@
+//Creación de listas
+
+var names = new List<string> { "<name>", "Ana", "Felipe" };
+foreach (var name in names)
+{
+  Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+
+//Modificación del contenido de las listas
+Console.WriteLine();
+names.Add("Maria");
+names.Add("Bill");
+names.Remove("Ana");
+foreach (var name in names)
+{
+  Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+
+//Acceder a elementos de la lista
+Console.WriteLine($"My name is {names[0]}.");
+Console.WriteLine($"I've added {names[2]} and {names[3]} to the list.");
+
+//Contar el número de elementos de la lista
+Console.WriteLine($"The list has {names.Count} people in it");
+
+//Búsqueda de elementos en la lista
+var index = names.IndexOf("Felipe");
+if (index != -1)
+  Console.WriteLine($"The name {names[index]} is at index {index}");
+
+var notFound = names.IndexOf("Not Found");
+  Console.WriteLine($"When an item is not found, IndexOf returns {notFound}");
+  
+//Ordenación de la lista
+names.Sort();
+foreach (var name in names)
+{
+  Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+
+//Lista de otros tipos
+// Ejemplo: Números de Fibonacci
+var fibonacciNumbers = new List<int> {1, 1};
+
+var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
+var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+
+fibonacciNumbers.Add(previous + previous2);
+
+foreach(var item in fibonacciNumbers)
+    Console.WriteLine(item);
+    
+//Como obtener los primeros 20 números de Fibonacci
+var fibonacciNumbers = new List<int> {1, 1};
+
+while (fibonacciNumbers.Count < 20)
+{
+    var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
+    var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+
+    fibonacciNumbers.Add(previous + previous2);
+}
+foreach(var item in fibonacciNumbers)
+    Console.WriteLine(item);
